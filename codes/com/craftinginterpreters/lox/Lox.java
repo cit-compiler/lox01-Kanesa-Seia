@@ -23,6 +23,7 @@ public class Lox {
       private static void runFile(String path) throws IOException {
         byte[] bytes = Files.readAllBytes(Paths.get(path));
         run(new String(bytes, Charset.defaultCharset()));
+        if(hadError) System.exit(65);
       }
 
     private static void runPrompt() throws IOException{
@@ -41,14 +42,14 @@ public class Lox {
     private static void run(String source){
         /* 
         Scanner scanner = new Scanner(source);
-        List<Token> tokens = scanner.scanToken();
+        List<Token> tokens = scanner.scanTokens();
 
         //For now, just print the tokens
         for(Token token : tokens){
             System.out.println(token);
         }*/
-        System.out.print(source);
-        if(hadError) System.exit(65);
+        System.out.println(source);
+        
 
     }
 

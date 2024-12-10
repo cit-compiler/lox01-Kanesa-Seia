@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static com.craftinginterpreters.lox.TokenType.*;
 
-class Scanner {
+public class Scanner {
     private final String source;
     private final List<Token> tokens = new ArrayList<>();
     private int start = 0;
@@ -61,7 +61,7 @@ class Scanner {
         case ' ':
         case '\r':
         case '\t':
-              // Ignore whitespace.
+              
               break;
         case '\n':
               line++;
